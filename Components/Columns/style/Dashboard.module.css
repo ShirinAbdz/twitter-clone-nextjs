@@ -1,0 +1,59 @@
+/* img{
+    width:10px;
+    height: 10px;
+} */
+
+.DashboardContiner {
+    /* display: flex;
+    flex-direction: column; */
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 10px 20px;
+    justify-content:flex-start;
+    padding: 0 5px;
+    font-size: 1rem;
+}
+
+.DashboardContiner button {
+    display: flex;
+    flex-direction: row;
+    color: rgb(0, 0, 0);
+    padding: 10px 19px;
+    margin: 0px 10px 0px 5px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1rem;
+    align-items: center;
+    background-color:#fff;
+    transition: background-color 0.3s ease, color 0.1s ease;
+
+
+}
+.DashboardContiner button:hover{
+    background-color: rgba(154, 153, 153, 0.247);
+
+}
+
+.DashboardContiner button p {
+
+    margin: 0 5px 0 15px;
+
+}
+
+#PostButton{
+    display: flex;
+    margin-top: 20px;
+    padding: 12px 85px;
+    background-color: #1D9BF0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+#Logo{
+margin-bottom: 10px;
+padding: 5px;
+border-radius:  50px  50px;
+}

@@ -1,0 +1,23 @@
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+.container {
+  width: 90%;
+  margin-left: 60px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1.5fr;
+  /* grid-gap: 5px; */
+}
+
+.column {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  height: 100vh;
+  background-color: #fff;
+  border: none;
+}
+
+#column2 {
+  border: #726d6d0f solid 1px;
+}
