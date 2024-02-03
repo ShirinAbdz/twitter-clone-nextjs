@@ -65,19 +65,19 @@
 // export default Content;
 // components/Content.js
 
-import React from 'react';
-import HomeContent from './HomeContent';
-import DefaultContent from './DefaultContent';
-
-const Content = () => {
+import React from "react";
+import HomeContent from "./HomeContent";
+import DefaultContent from "./DefaultContent"
+const Content = ({ currentContent }) => {
   return (
     <div>
-      <DefaultContent />
+      {currentContent === "profile" && <DefaultContent />}
+      {currentContent === "home" && <HomeContent />}
     </div>
   );
 };
 
-Content.Home = HomeContent;
-Content.Default = DefaultContent;
+// Content.Home = HomeContent;
+// Content.Default = DefaultContent;
 
 export default Content;

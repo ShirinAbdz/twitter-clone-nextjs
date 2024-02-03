@@ -2,7 +2,7 @@ import styles from "../styles/Content.module.css";
 import Image from "next/image";
 import Tabs from "./Tabs";
 
-function Content() {
+function DefaultContent() {
   return (
     <div>
       <div className={styles.container}>
@@ -62,4 +62,4 @@ function Content() {
   );
 }
 
-export default Content;
+export default DefaultContent;

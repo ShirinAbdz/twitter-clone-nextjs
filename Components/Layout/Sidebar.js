@@ -1,8 +1,9 @@
 // import HomePage from "./Components/HomePage"
+import React from 'react';
+import { useRouter } from 'next/router';  // Import useRouter
 import styles from "../styles/Sidebar.module.css";
-import Link from "next/link";
 
-function Sidebar() {
+const Sidebar = ({ onSidebarClick }) => {
   return (
     <div>
       <div className={styles.DashboardContiner}>
@@ -10,7 +11,7 @@ function Sidebar() {
           <img src="/logo.svg" alt="X logo" />
         </button>
 
-        <button>
+        <button  onClick={() => onSidebarClick('home')}>
           <img src="/home.svg" alt="Home icon" />
           <p>Home</p>
         </button>
@@ -36,7 +37,7 @@ function Sidebar() {
           <p>Bookmarks</p>
         </button>
         <button>
-          <img src="/community.svg" alt="Communities icon" />
+          <img src="/community.svg" alt="Communities icon" onClick={() => onSidebarClick('profile')}/>
           <p>Communities</p>
         </button>
         <button>
