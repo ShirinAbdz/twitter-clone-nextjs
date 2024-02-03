@@ -1,7 +1,8 @@
 // import HomePage from "./Components/HomePage"
-import styles from "./style/Dashboard.module.css";
+import styles from "../styles/Sidebar.module.css";
+import Link from "next/link";
 
-function Dashboard() {
+function Sidebar() {
   return (
     <div>
       <div className={styles.DashboardContiner}>
@@ -13,6 +14,7 @@ function Dashboard() {
           <img src="/home.svg" alt="Home icon" />
           <p>Home</p>
         </button>
+
         <button>
           <img src="/explore.svg" alt="explore icon" />
           <p>Explore</p>
@@ -54,4 +56,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Sidebar;

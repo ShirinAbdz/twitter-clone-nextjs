@@ -1,32 +1,48 @@
-import styles from "./style/Content.module.css";
-
+import styles from "../styles/Content.module.css";
+import Image from "next/image";
+import Tabs from "./Tabs";
 
 function Content() {
   return (
     <div>
       <div className={styles.container}>
         <div className={styles.header}>
-          <img src="/header.jfif" alt="header bg" id={styles.headerImage} />
-          <img src="/profile.jpg" alt="profile bg" id={styles.profileImage} />
+          <Image
+            src="/header.jfif"
+            alt="header bg"
+            width={1000}
+            height={500}
+            id={styles.headerImage}
+            priority
+          />
+          <Image
+            src="/profile.jpg"
+            width={500}
+            height={200}
+            alt="profile bg"
+            id={styles.profileImage}
+          />
           <button className={styles.editProfileButton}>Edit profile</button>
         </div>
 
         <div className={styles.biography}>
           <h2>Shirin</h2>
           <p id={styles.accountId}>@Shirin_abdz</p>
-          <p>
+          <span>
             🎯 Classic Creative Artistic Curious Emerging Frontend Developer
-          </p>
+          </span>
+
           <div className={styles.information}>
-            <div>
-              <img src="/location.svg" alt="" />
+            <div className={styles.details}>
+              <img src="/location.svg" alt="location" />
               <span>Iran</span>
             </div>
-            <div>
-              <img src="/date.svg" alt="" />
+            <div className={styles.details}>
+              <img src="/date.svg" alt="date" />
               <span>Joined June 2020</span>
             </div>
           </div>
+
           <div className={styles.followPart}>
             <button className={styles.following}>
               <span>1264</span>
@@ -38,9 +54,10 @@ function Content() {
             </button>
           </div>
         </div>
-       
+        <div className={styles.cotentSection}>
+          <Tabs />
+        </div>
       </div>
-      
     </div>
   );
 }

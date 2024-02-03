@@ -1,4 +1,4 @@
-import styles from "./Columns/style/Suggestions.module.css";
+import styles from "../styles/Suggestions.module.css";
 import PropTypes from "prop-types";
 
 function SuggestionCard({ imageSrc, name, id }) {
@@ -10,7 +10,7 @@ function SuggestionCard({ imageSrc, name, id }) {
         <p id={styles.name}>{name}</p>
         <p id={styles.id}>{id}</p>
         </div>
-        <button>Follow button</button>
+        <button className={styles.FollowButton}>Follow</button>
       </div>
     </div>
   );

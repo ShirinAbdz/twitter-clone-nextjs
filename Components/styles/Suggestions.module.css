@@ -1,0 +1,71 @@
+#searchInput {
+  width: 100%;
+  background-color: #eff3f4;
+  border: none;
+  border-radius: 20px;
+  padding: 13px 0;
+  margin-bottom: 17px;
+  padding-left: 50px;
+}
+
+.searchBar {
+  position: relative;
+  position: static;
+  /* margin-top: 20px; */
+}
+
+.searchBar > img {
+  position: absolute;
+  margin-left: 16px;
+  margin-top: 12px;
+  width: 18px;
+  height: 18px;
+}
+
+.suggestedAccount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.suggestedAccounts {
+  background-color: #f7f9f9;
+  width: 100%;
+  border-radius: 20px;
+  /* margin-left: 12px ; */
+  padding: 20px;
+  /* margin: 20px 20px; */
+  /* margin: 20px; */
+}
+.liTag {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.suggestedAccount button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-left: 90px;
+}
+
+.suggestSection {
+  margin: 10px 20px;
+}
+
+
+.FollowButton {
+
+    
+}

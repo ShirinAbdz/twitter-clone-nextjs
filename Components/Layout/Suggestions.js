@@ -1,5 +1,5 @@
-import SuggestionCard from "../SuggestionCard";
-import styles from "./style/Suggestions.module.css";
+import SuggestionCard from "./SuggestionCard";
+import styles from "../styles/Suggestions.module.css";
 function Suggestions() {
   return (
     <div>
@@ -12,21 +12,21 @@ function Suggestions() {
         <div className={styles.suggestedAccounts}>
           <h2>You might like</h2>
           <ul>
-            <li>
+            <li className={styles.liTag}>
               <SuggestionCard
                 imageSrc="/bill.jpg"
                 name="Bill Gates"
                 id="@BillGates"
               />
             </li>
-            <li>
+            <li className={styles.liTag}>
               <SuggestionCard
                 name="Elon Musk"
                 id="@elonmusk"
                 imageSrc="/elon.webp"
               />
             </li>
-            <li>
+            <li className={styles.liTag}>
               <SuggestionCard
                 name="Mark Zuckerberg"
                 id="@finkd"

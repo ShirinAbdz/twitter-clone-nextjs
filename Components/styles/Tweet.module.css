@@ -1,0 +1,47 @@
+/* Tweet.module.css */
+
+.tweet {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .tweetHeader {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profilePic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .tweetContent {
+    margin: 10px 0;
+  }
+  
+  .tweetFooter {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tweetDate {
+    color: #888;
+  }
+  
+  .likeButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
