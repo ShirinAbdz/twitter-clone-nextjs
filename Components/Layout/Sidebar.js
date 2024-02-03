@@ -1,9 +1,21 @@
-// import HomePage from "./Components/HomePage"
+// Sidebar.js
+
 import React from 'react';
 import { useRouter } from 'next/router';  // Import useRouter
 import styles from "../styles/Sidebar.module.css";
 
 const Sidebar = ({ onSidebarClick }) => {
+  const router = useRouter();  // Initialize useRouter
+
+  const handleHomeClick = () => {
+    const currentRoute = router.pathname;
+
+    if (currentRoute !== '/home') {
+      onSidebarClick('home');  // Optional: You can still call onSidebarClick if needed
+      router.push('/home');    // Use router.push to navigate to '/home'
+    }
+  };
+
   return (
     <div>
       <div className={styles.DashboardContiner}>
@@ -11,7 +23,7 @@ const Sidebar = ({ onSidebarClick }) => {
           <img src="/logo.svg" alt="X logo" />
         </button>
 
-        <button  onClick={() => onSidebarClick('home')}>
+        <button onClick={handleHomeClick}>
           <img src="/home.svg" alt="Home icon" />
           <p>Home</p>
         </button>
@@ -55,6 +67,6 @@ const Sidebar = ({ onSidebarClick }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;
