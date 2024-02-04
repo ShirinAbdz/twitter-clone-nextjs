@@ -1,21 +1,21 @@
-// Sidebar.js
-
-import React from 'react';
-import { useRouter } from 'next/router';  // Import useRouter
+import React from "react";
+import { useRouter } from "next/router"; // Import useRouter
 import styles from "../styles/Sidebar.module.css";
 
 const Sidebar = ({ onSidebarClick }) => {
-  const router = useRouter();  // Initialize useRouter
+  const router = useRouter();
 
-  const handleHomeClick = () => {
+  const handleHomeClick = (event) => {
+    event.preventDefault();
     const currentRoute = router.pathname;
-
-    if (currentRoute !== '/home') {
-      onSidebarClick('home');  // Optional: You can still call onSidebarClick if needed
-      router.push('/home');    // Use router.push to navigate to '/home'
+  
+    if (currentRoute !== "/home") {
+      onSidebarClick("home");
+      router.push("/home").catch((err) => {
+        console.error("Error navigating to /home:", err);
+      });
     }
   };
-
   return (
     <div>
       <div className={styles.DashboardContiner}>
@@ -23,10 +23,10 @@ const Sidebar = ({ onSidebarClick }) => {
           <img src="/logo.svg" alt="X logo" />
         </button>
 
-        <button onClick={handleHomeClick}>
+        <a href="/HomePage" onClick={handleHomeClick}>
           <img src="/home.svg" alt="Home icon" />
           <p>Home</p>
-        </button>
+        </a>
 
         <button>
           <img src="/explore.svg" alt="explore icon" />
@@ -49,7 +49,11 @@ const Sidebar = ({ onSidebarClick }) => {
           <p>Bookmarks</p>
         </button>
         <button>
-          <img src="/community.svg" alt="Communities icon" onClick={() => onSidebarClick('profile')}/>
+          <img
+            src="/community.svg"
+            alt="Communities icon"
+            onClick={() => onSidebarClick("profile")}
+          />
           <p>Communities</p>
         </button>
         <button>

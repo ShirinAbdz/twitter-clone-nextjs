@@ -1,6 +1,6 @@
-import styles from "../styles/Content.module.css";
+import styles from "../Components/styles/Content.module.css";
 import Image from "next/image";
-import Tabs from "./Tabs";
+import Tabs from "../Components/Layout/Tabs";
 
 function DefaultContent() {
   return (
