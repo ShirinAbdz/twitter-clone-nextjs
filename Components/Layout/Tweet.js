@@ -1,5 +1,6 @@
-import React from 'react';
-import styles from "../styles/Tweet.module.css"; 
+import React from "react";
+import styles from "../styles/Tweet.module.css";
+import { useState } from "react";
 
 // const Tweet = ({ username, content, date, profileImage }) => {
 //   return (
@@ -21,28 +22,33 @@ import styles from "../styles/Tweet.module.css";
 
 // export default Tweet;
 
-
 const Tweet = ({ username, content, date, profileImage }) => {
   const renderContent = () => {
     // Split the content into words
-    const words = content.split(' ');
+    const words = content.split(" ");
 
     // Iterate through words and add the class to @mentions and #hashtags
     const contentWithLinks = words.map((word, index) => {
-      if (word.startsWith('@')) {
+      if (word.startsWith("@")) {
         return (
           <React.Fragment key={index}>
-            <a href={`https://twitter.com/${word.substring(1)}`} className={styles.blueLink}>
+            <a
+              href={`https://twitter.com/${word.substring(1)}`}
+              className={styles.blueLink}
+            >
               {word}
-            </a>{' '}
+            </a>{" "}
           </React.Fragment>
         );
-      } else if (word.startsWith('#')) {
+      } else if (word.startsWith("#")) {
         return (
           <React.Fragment key={index}>
-            <a href={`https://twitter.com/hashtag/${word.substring(1)}`} className={styles.blueLink}>
+            <a
+              href={`https://twitter.com/hashtag/${word.substring(1)}`}
+              className={styles.blueLink}
+            >
               {word}
-            </a>{' '}
+            </a>{" "}
           </React.Fragment>
         );
       } else {
@@ -53,6 +59,10 @@ const Tweet = ({ username, content, date, profileImage }) => {
     return <p>{contentWithLinks}</p>;
   };
 
+  const [like, setlike] = useState(false);
+  const likeHandler = () => {
+    setlike((like) => !like);
+  };
   return (
     <div className={styles.tweet}>
       <div className={styles.tweetHeader}>
@@ -62,7 +72,13 @@ const Tweet = ({ username, content, date, profileImage }) => {
       <div className={styles.tweetContent}>{renderContent()}</div>
       <div className={styles.tweetFooter}>
         <span className={styles.tweetDate}>{date}</span>
-        <button className={styles.likeButton}>Like</button>
+        <button className={styles.likeButton} onClick={likeHandler}>
+          {like ? (
+            <img src="/liked.svg" alt="Liked" />
+          ) : (
+            <img src="/like.svg" alt="Not Liked" />
+          )}
+        </button>
       </div>
     </div>
   );
