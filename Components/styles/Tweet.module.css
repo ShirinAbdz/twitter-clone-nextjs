@@ -44,3 +44,13 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+
+.tweetContent p {
+  color: #333; /* Set the default text color */
+}
+
+.tweetContent p a {
+  color: #007BFF; /* Set the color for links (hashtags and mentions) */
+}
+

@@ -4,8 +4,14 @@ import Tweet from "../Components/Layout/tweet";
 const Home = () => {
   return (
     <div>
+       <Tweet
+        username="Taylor Swift"
+        content="Exploring new ideas and pushing boundaries today. 🚀 Innovation never takes a day off! #Innovation #CreativityFlow 🌟"
+        date="2024-02-20"
+        profileImage="/profile/taylor.webp" 
+      />
       <Tweet
-        username="alex_baldwin"
+        username="Alex Baldwin"
         content="Just enjoying the weekend vibes! 🌈 Whether it's conquering goals or indulging in self-care, make every moment count. #WeekendVibes #PositiveEnergy ✨"
         date="2024-02-05"
       />
@@ -55,15 +61,12 @@ const Home = () => {
         date="2024-02-17"
       />
       <Tweet
-        username="jackson_smith"
+        username="Jackson Smith"
         content="Feeling grateful for the support and love from friends and family. 💖 It truly makes a difference. #Gratitude #FamilyLove 🙏"
         date="2024-02-19"
+        profileImage="/profile/batman.jpg"
       />
-      <Tweet
-        username="olivia_brown"
-        content="Exploring new ideas and pushing boundaries today. 🚀 Innovation never takes a day off! #Innovation #CreativityFlow 🌟"
-        date="2024-02-20"
-      />
+     
     </div>
   );
 };
