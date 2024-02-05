@@ -1,13 +1,11 @@
-// Layout.js
-
-import React, { useState } from 'react';
-import Sidebar from './Sidebar';
-import Content from './Content';
-import Suggestions from './Suggestions';
+import React, { useState } from "react";
+import Sidebar from "./sidebar";
+import Content from "./content";
+import Suggestions from "./suggestions";
 import styles from "../styles/Layout.module.css";
 
 const Layout = () => {
-  const [currentContent, setCurrentContent] = useState('profile');
+  const [currentContent, setCurrentContent] = useState("profile");
 
   const handleSidebarClick = (option) => {
     setCurrentContent(option);

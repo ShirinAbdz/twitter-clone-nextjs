@@ -1,8 +1,8 @@
 import styles from "../Components/styles/Content.module.css";
 import Image from "next/image";
-import Tabs from "../Components/Layout/Tabs";
+import Tabs from "../Components/Layout/tabs";
 
-function DefaultContent() {
+function Profile() {
   return (
     <div>
       <div className={styles.container}>
@@ -62,4 +62,4 @@ function DefaultContent() {
   );
 }
 
-export default DefaultContent;
+export default Profile;

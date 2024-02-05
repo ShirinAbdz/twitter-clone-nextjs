@@ -1,4 +1,4 @@
-import SuggestionCard from "./SuggestionCard";
+import SuggestionCard from "./suggestionCard";
 import styles from "../styles/Suggestions.module.css";
 function Suggestions() {
   return (

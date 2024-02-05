@@ -1,7 +1,7 @@
 import React from "react";
-import Tweet from "../Components/Layout/Tweet";
+import Tweet from "../Components/Layout/tweet";
 
-const HomeContent = () => {
+const Home = () => {
   return (
     <div>
       <Tweet
@@ -38,4 +38,4 @@ const HomeContent = () => {
   );
 };
 
-export default HomeContent;
+export default Home;

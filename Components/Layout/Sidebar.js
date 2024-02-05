@@ -1,21 +1,19 @@
 import React from "react";
-import { useRouter } from "next/router"; // Import useRouter
+import { useRouter } from "next/router";
 import styles from "../styles/Sidebar.module.css";
+import Link from "next/link";
 
 const Sidebar = ({ onSidebarClick }) => {
   const router = useRouter();
 
   const handleHomeClick = (event) => {
     event.preventDefault();
-    const currentRoute = router.pathname;
-  
-    if (currentRoute !== "/home") {
-      onSidebarClick("home");
-      router.push("/home").catch((err) => {
-        console.error("Error navigating to /home:", err);
-      });
-    }
+    onSidebarClick("home");
+    router.push("/home").catch((err) => {
+      console.error("Error navigating to /home:", err);
+    });
   };
+
   return (
     <div>
       <div className={styles.DashboardContiner}>
@@ -23,11 +21,12 @@ const Sidebar = ({ onSidebarClick }) => {
           <img src="/logo.svg" alt="X logo" />
         </button>
 
-        <a href="/HomePage" onClick={handleHomeClick}>
-          <img src="/home.svg" alt="Home icon" />
-          <p>Home</p>
-        </a>
-
+        <Link href="/HomePage" passHref legacyBehavior>
+          <a onClick={handleHomeClick}>
+            <img src="/home.svg" alt="Home icon" />
+            <p>Home</p>
+          </a>
+        </Link>
         <button>
           <img src="/explore.svg" alt="explore icon" />
           <p>Explore</p>
@@ -49,17 +48,15 @@ const Sidebar = ({ onSidebarClick }) => {
           <p>Bookmarks</p>
         </button>
         <button>
-          <img
-            src="/community.svg"
-            alt="Communities icon"
-            onClick={() => onSidebarClick("profile")}
-          />
+          <img src="/community.svg" alt="Communities icon" />
           <p>Communities</p>
         </button>
+
         <button>
           <img src="/profile.svg" alt="Profile icon" />
           <p>Profile</p>
         </button>
+
         <button>
           <img src="/more.svg" alt="More icon" />
           <p>More</p>
