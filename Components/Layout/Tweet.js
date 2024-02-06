@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/Tweet.module.css";
 import { useState } from "react";
 
-const Tweet = ({ username, content, date, profileImage }) => {
+const Tweet = ({ id, username, content, date, profileImage }) => {
   const renderContent = () => {
     const words = content.split(" ");
 
@@ -44,6 +44,7 @@ const Tweet = ({ username, content, date, profileImage }) => {
   return (
     <div className={styles.tweet}>
       <div className={styles.tweetHeader}>
+        <span className={styles.id}> {id}</span>
         <img src={profileImage} alt="Profile" className={styles.profilePic} />
         <span className={styles.username}>{username}</span>
       </div>
