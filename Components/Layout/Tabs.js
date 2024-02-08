@@ -5,9 +5,11 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import styles from "../styles/Tweet.module.css";
+import Tweet from "./tweet";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
+  
 
   return (
     <div
@@ -32,13 +34,7 @@ CustomTabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-export default function BasicTabs({
-  id,
-  username,
-  content,
-  date,
-  profileImage,
-}) {
+export default function BasicTabs({}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -58,20 +54,7 @@ export default function BasicTabs({
         <Tab label="Liked Tweets" {...a11yProps(0)} />
       </Tabs>
       <CustomTabPanel value={value} index={0}>
-        {/* Liked Tweets Content */}
-        <div className={styles.tweet}>
-          <div className={styles.tweetHeader}>
-            <span className={styles.id}> {id}</span>
-            <img src={profileImage} alt="Profile" className={styles.profilePic} />
-            <span className={styles.username}>{username}</span>
-          </div>
-          <div className={styles.tweetContent}>
-            <p>{content}</p>
-          </div>
-          <div className={styles.tweetFooter}>
-            <span className={styles.tweetDate}>{date}</span>
-          </div>
-        </div>
+        <Tweet />
       </CustomTabPanel>
     </Box>
   );

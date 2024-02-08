@@ -4,6 +4,9 @@ import { useState } from "react";
 
 const Tweet = ({ id, username, content, date, profileImage }) => {
   const renderContent = () => {
+    if (!content) {
+      return <p>No content available</p>;
+    }
     const words = content.split(" ");
 
     const contentWithLinks = words.map((word, index) => {
@@ -38,9 +41,11 @@ const Tweet = ({ id, username, content, date, profileImage }) => {
   };
 
   const [like, setlike] = useState(false);
+
   const likeHandler = () => {
     setlike((like) => !like);
   };
+
   return (
     <div className={styles.tweet}>
       <div className={styles.tweetHeader}>
