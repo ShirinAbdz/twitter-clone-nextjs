@@ -26,8 +26,7 @@
 
   align-items: center;
   margin: 10px 0;
-  /* width: 120px; */
-  border: 2px solid black;
+  width: 100%;
 }
 
 .suggestedAccounts {
@@ -41,8 +40,6 @@
 .liTag {
   list-style-type: none;
   display: flex;
-  /* flex-direction: row; */
-  /* justify-content: space-between; */
 }
 
 .profileImage {
@@ -55,7 +52,7 @@
 .suggestedAccount button {
   padding: 10px 20px;
   border-radius: 20px;
-  margin-left: 90px;
+  margin-left: 50px;
 
 }
 
@@ -64,7 +61,11 @@
 }
 
 .FollowButton {
-
-  border: 2px solid rgb(186, 40, 40);
+background-color: rgba(74, 78, 77, 0.177);
   font-size: 1rem;
 }
+
+.suggestedAccount .name , .liTag {
+  font-size: 1rem;
+}
+

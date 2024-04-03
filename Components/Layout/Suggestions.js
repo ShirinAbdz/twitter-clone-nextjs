@@ -28,7 +28,7 @@ function Suggestions() {
             </li>
             <li className={styles.liTag}>
               <SuggestionCard
-                name="Mark Zuckerberg"
+                name="Zuckerberg"
                 id="@finkd"
                 imageSrc="/mark.jfif"
               />
