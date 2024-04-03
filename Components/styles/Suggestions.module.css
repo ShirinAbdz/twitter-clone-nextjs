@@ -1,7 +1,7 @@
 #searchInput {
   width: 100%;
   background-color: #eff3f4;
-  border: none;
+  /* border: none; */
   border-radius: 20px;
   padding: 13px 0;
   margin-bottom: 17px;
@@ -11,10 +11,9 @@
 .searchBar {
   position: relative;
   position: static;
-  /* margin-top: 20px; */
 }
 
-.searchBar > img {
+.searchBar>img {
   position: absolute;
   margin-left: 16px;
   margin-top: 12px;
@@ -24,26 +23,26 @@
 
 .suggestedAccount {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
   align-items: center;
   margin: 10px 0;
+  /* width: 120px; */
+  border: 2px solid black;
 }
 
 .suggestedAccounts {
   background-color: #f7f9f9;
   width: 100%;
   border-radius: 20px;
-  /* margin-left: 12px ; */
   padding: 20px;
-  /* margin: 20px 20px; */
-  /* margin: 20px; */
+
 }
+
 .liTag {
   list-style-type: none;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
 }
 
 .profileImage {
@@ -54,18 +53,18 @@
 }
 
 .suggestedAccount button {
-  border: none;
   padding: 10px 20px;
   border-radius: 20px;
   margin-left: 90px;
+
 }
 
 .suggestSection {
   margin: 10px 20px;
 }
 
-
 .FollowButton {
 
-    
+  border: 2px solid rgb(186, 40, 40);
+  font-size: 1rem;
 }
