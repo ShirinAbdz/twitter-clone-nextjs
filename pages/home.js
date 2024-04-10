@@ -1,5 +1,5 @@
 import React from "react";
-import Tweet from "../Components/Layout/tweet";
+import Tweet from "@/Components/Layout/tweet";
 
 const Home = () => {
   return (
