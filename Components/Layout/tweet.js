@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Tweet.module.css";
+import styles from "@/Components/styles/tweet.module.css";
 import { useState } from "react";
 
 const Tweet = ({ id, username, content, date, profileImage }) => {

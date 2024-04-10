@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 import Suggestions from "./Suggestions";
-import styles from "../styles/Layout.module.css";
+import styles from "@/Components/styles/layout.module.css";
 
 const Layout = () => {
   const [currentContent, setCurrentContent] = useState("profile");
