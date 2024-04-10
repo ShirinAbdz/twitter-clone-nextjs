@@ -1,8 +1,8 @@
 
 
 import React, { useEffect, useState } from "react";
-import Profile from "../../pages/Profile";
-import Home from "../../pages/home";
+import Profile from "@/pages/Profile";
+import Home from "@/pages/home";
 import { useRouter } from "next/router";
 
 const Content = ({ currentContent }) => {

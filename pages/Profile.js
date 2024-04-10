@@ -1,7 +1,6 @@
 import styles from "@/Components/styles/Content.module.css";
 import Image from "next/image";
 import Tabs from "@/Components/Layout/tabs";
-// import Tweet from "../Components/Layout/tweet";
 
 function Profile() {
   return (

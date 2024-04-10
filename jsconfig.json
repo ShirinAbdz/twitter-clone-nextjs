@@ -6,12 +6,12 @@
 //   }
 // }
 
-
 {
   "compilerOptions": {
-     "baseUrl": ".",
-     "paths": {
-       "@/Components/*": ["Components/*"]
-     }
+    "baseUrl": ".",
+    "paths": {
+      "@/Components/*": ["Components/*"],
+      "@/pages/*": ["pages/*"],
+    }
   }
- }
+}

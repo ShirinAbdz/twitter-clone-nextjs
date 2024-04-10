@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import styles from "../styles/Tweet.module.css";
+import styles from "../styles/tabs.module.css";
 import Tweet from "./tweet";
 
 function CustomTabPanel(props) {

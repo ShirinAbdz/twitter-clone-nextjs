@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Sidebar from "./sidebar";
-import Content from "./content";
-import Suggestions from "./suggestions";
+import Sidebar from "./Sidebar";
+import Content from "./Content";
+import Suggestions from "./Suggestions";
 import styles from "../styles/Layout.module.css";
 
 const Layout = () => {
