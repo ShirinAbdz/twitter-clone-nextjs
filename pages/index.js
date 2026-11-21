@@ -1,34 +1,19 @@
-import Tweet from "@/Components/Layout/tweet";
+import { useMemo } from "react";
 import ComposeBox from "@/Components/Layout/ComposeBox";
 import HomeHeader from "@/Components/Layout/HomeHeader";
+import Feed from "@/Components/Layout/Feed";
 import { useApp } from "@/Components/context/AppContext";
 
 export default function HomePage() {
-  const { tweets, query, getAuthor } = useApp();
-
-  const q = query.trim().toLowerCase();
-  const visible = q
-    ? tweets.filter((t) => {
-        const author = getAuthor(t.author);
-        return (
-          t.text.toLowerCase().includes(q) ||
-          author.name.toLowerCase().includes(q) ||
-          author.handle.toLowerCase().includes(q)
-        );
-      })
-    : tweets;
+  const { tweets } = useApp();
+  // Replies live on their tweet's page, not in the home feed.
+  const feed = useMemo(() => tweets.filter((t) => !t.replyTo), [tweets]);
 
   return (
     <div>
       <HomeHeader />
       <ComposeBox />
-      {visible.length === 0 ? (
-        <p style={{ padding: 30, textAlign: "center", color: "var(--text-muted)" }}>
-          No tweets found.
-        </p>
-      ) : (
-        visible.map((t) => <Tweet key={t.id} tweet={t} />)
-      )}
+      <Feed tweets={feed} firstLoadSkeleton emptyText="No tweets yet. Write the first one!" />
     </div>
   );
 }

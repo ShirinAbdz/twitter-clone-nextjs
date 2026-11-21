@@ -31,11 +31,16 @@
 
 .bottom {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 14px;
   border-top: 1px solid var(--border);
   padding-top: 10px;
+}
+
+.tools {
+  display: flex;
+  gap: 2px;
+  margin-right: auto;
 }
 
 .counter {
@@ -74,4 +79,180 @@
   .input {
     font-size: 1.1rem;
   }
+}
+
+.toolButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.toolButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.toolButton:hover:not(:disabled) {
+  background: rgba(29, 155, 240, 0.1);
+}
+
+.toolButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---- Photo preview ---- */
+.preview {
+  position: relative;
+  margin: 6px 0 10px;
+}
+
+.preview img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.removeButton {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(15, 20, 25, 0.75);
+  color: #fff;
+  cursor: pointer;
+}
+
+.removeButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.removeButton:hover {
+  background: rgba(15, 20, 25, 0.9);
+}
+
+/* ---- Poll editor ---- */
+.poll {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0 12px;
+  padding: 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+}
+
+.pollRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pollInput {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: var(--text);
+  outline: none;
+}
+
+.pollInput:focus {
+  border-color: var(--accent);
+}
+
+.pollRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.pollRemove svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pollRemove:hover {
+  background: var(--hover);
+}
+
+.pollFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.textButton {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.textButton:hover {
+  text-decoration: underline;
+}
+
+.danger {
+  color: var(--danger);
+  margin-left: auto;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.duration select {
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 4px 6px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hint,
+.error {
+  font-size: 0.85rem;
+  margin: 4px 0 8px;
+}
+
+.hint {
+  color: var(--text-muted);
+}
+
+.error {
+  color: var(--danger);
 }

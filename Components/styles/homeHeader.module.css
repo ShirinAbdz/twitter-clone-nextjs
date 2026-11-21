@@ -9,9 +9,49 @@
   border-bottom: 1px solid var(--border);
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.titles {
+  min-width: 0;
+}
+
 .header h1 {
   font-size: 1.25rem;
   font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: -8px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.back:hover {
+  background: var(--hover);
+}
+
+.back img {
+  width: 20px;
+  height: 20px;
 }
 
 .search {

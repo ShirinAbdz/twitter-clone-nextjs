@@ -135,9 +135,36 @@
   .soon {
     display: none;
   }
+  .item {
+    padding: 9px;
+  }
   .post {
     margin-top: 0;
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
   }
+}
+
+/* Unread count on the notifications icon */
+.iconWrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  border: 2px solid var(--bg);
+  box-sizing: content-box;
 }

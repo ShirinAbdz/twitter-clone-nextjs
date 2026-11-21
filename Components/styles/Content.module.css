@@ -101,3 +101,40 @@
   color: var(--text);
   margin-right: 3px;
 }
+
+.headerFallback {
+  width: 100%;
+  height: clamp(110px, 28vw, 200px);
+}
+
+.followButton {
+  margin-top: 12px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-weight: 700;
+  background: var(--text);
+  color: var(--bg);
+  cursor: pointer;
+}
+
+.followingButton {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.notFound {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.notFound h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.notFound p {
+  color: var(--text-muted);
+}

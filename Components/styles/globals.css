@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600;800&display=swap');
+/* Manrope for Latin text. Vazirmatn covers Persian/Arabic letters, which Manrope doesn't have. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600;800&family=Vazirmatn:wght@200;300;400;600;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -41,7 +42,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Manrope', 'Vazirmatn', sans-serif;
 }
 
 html,

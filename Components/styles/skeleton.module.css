@@ -1,0 +1,79 @@
+.row {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.lines {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shape {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-input);
+}
+
+/* A soft highlight slides across each grey shape. */
+.shape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--hover), transparent);
+  transform: translateX(-100%);
+  animation: sweep 1.4s ease-in-out infinite;
+}
+
+.circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.line {
+  height: 12px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.short {
+  width: 38%;
+}
+
+.medium {
+  width: 72%;
+}
+
+.footer {
+  width: 55%;
+  margin-top: 6px;
+}
+
+@keyframes sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shape::after {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+}

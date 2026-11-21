@@ -3,20 +3,24 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../styles/Sidebar.module.css";
 import ThemeToggle from "./ThemeToggle";
+import { useApp } from "../context/AppContext";
 
-const SOON = [
-  ["/explore.svg", "Explore"],
-  ["/notification.svg", "Notification"],
-  ["/message.svg", "Messages"],
-  ["/list.svg", "Lists"],
-  ["/bookmark.svg", "Bookmarks"],
-  ["/community.svg", "Communities"],
+// href = a real page. Items without one are still "coming soon".
+const NAV = [
+  { href: "/", icon: "/home.svg", label: "Home", active: (p) => p === "/" },
+  { href: "/explore", icon: "/explore.svg", label: "Explore", active: (p) => p === "/explore" },
+  { href: "/notifications", icon: "/notification.svg", label: "Notifications", active: (p) => p === "/notifications", badge: true },
+  { icon: "/message.svg", label: "Messages" },
+  { icon: "/list.svg", label: "Lists" },
+  { href: "/bookmarks", icon: "/bookmark.svg", label: "Bookmarks", active: (p) => p === "/bookmarks" },
+  { icon: "/community.svg", label: "Communities" },
+  { href: "/profile", icon: "/profile.svg", label: "Profile", active: (p) => p === "/profile" },
 ];
 
 const Sidebar = () => {
   const router = useRouter();
+  const { unreadCount, hydrated } = useApp();
   const isHome = router.pathname === "/";
-  const isProfile = router.pathname === "/profile";
 
   const handlePost = () => {
     const focusInput = () => document.getElementById("compose-input")?.focus();
@@ -34,22 +38,34 @@ const Sidebar = () => {
         <img className="invert-dark" src="/logo.svg" alt="X logo" />
       </Link>
 
-      <Link href="/" className={`${styles.item} ${isHome ? styles.active : ""}`}>
-        <img className="invert-dark" src="/home.svg" alt="" />
-        <span className={styles.label}>Home</span>
-      </Link>
+      {NAV.map((entry) => {
+        if (!entry.href) {
+          return (
+            <button key={entry.label} className={`${styles.item} ${styles.soon}`} disabled title="Coming soon">
+              <img className="invert-dark" src={entry.icon} alt="" />
+              <span className={styles.label}>{entry.label}</span>
+            </button>
+          );
+        }
 
-      {SOON.map(([icon, label]) => (
-        <button key={label} className={`${styles.item} ${styles.soon}`} disabled title="Coming soon">
-          <img className="invert-dark" src={icon} alt="" />
-          <span className={styles.label}>{label}</span>
-        </button>
-      ))}
-
-      <Link href="/profile" className={`${styles.item} ${isProfile ? styles.active : ""}`}>
-        <img className="invert-dark" src="/profile.svg" alt="" />
-        <span className={styles.label}>Profile</span>
-      </Link>
+        const active = entry.active(router.pathname);
+        const unread = entry.badge && hydrated ? unreadCount : 0;
+        return (
+          <Link
+            key={entry.label}
+            href={entry.href}
+            className={`${styles.item} ${active ? styles.active : ""}`}
+            aria-current={active ? "page" : undefined}
+            aria-label={unread ? `${entry.label}, ${unread} unread` : undefined}
+          >
+            <span className={styles.iconWrap}>
+              <img className="invert-dark" src={entry.icon} alt="" />
+              {unread > 0 && <span className={styles.badge}>{unread > 9 ? "9+" : unread}</span>}
+            </span>
+            <span className={styles.label}>{entry.label}</span>
+          </Link>
+        );
+      })}
 
       <ThemeToggle />
 

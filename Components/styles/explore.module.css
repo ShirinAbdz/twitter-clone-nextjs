@@ -1,0 +1,68 @@
+.section {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.section h2,
+.tips h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  padding: 14px 16px 8px;
+}
+
+.tagRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.tagRow:hover {
+  background: var(--bg-subtle);
+}
+
+.tagName {
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.tagMeta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.person {
+  padding: 0 16px;
+}
+
+.person:hover {
+  background: var(--bg-subtle);
+}
+
+.tips {
+  padding-bottom: 20px;
+}
+
+.tips p {
+  padding: 0 16px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tips code {
+  background: var(--bg-input);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.85rem;
+}
+
+.empty {
+  padding: 30px;
+  text-align: center;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
