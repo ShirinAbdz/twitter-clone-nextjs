@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
-    "ignoreDeprecations": "6.0"
+    "paths": {
+      "@/Components/*": ["./Components/*"],
+      "@/pages/*": ["./pages/*"]
+    }
   }
 }
