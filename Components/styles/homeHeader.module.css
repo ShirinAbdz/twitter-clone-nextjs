@@ -1,0 +1,26 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 12px 20px;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.search {
+  display: none;
+  margin-top: 10px;
+}
+
+@media (max-width: 999px) {
+  .search {
+    display: block;
+  }
+}

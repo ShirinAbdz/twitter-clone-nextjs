@@ -1,0 +1,143 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 4px 12px 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 30px;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.item:hover:not(:disabled) {
+  background-color: var(--hover);
+}
+
+.item:disabled {
+  cursor: default;
+}
+
+.item img,
+.item svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.logo {
+  margin-bottom: 6px;
+}
+
+.active .label {
+  font-weight: 800;
+}
+
+/* Theme toggle: the theme attribute on <html> decides what shows. */
+.sunIcon,
+.whenDark {
+  display: none;
+}
+
+:global([data-theme="dark"]) .sunIcon {
+  display: block;
+}
+
+:global([data-theme="dark"]) .moonIcon {
+  display: none;
+}
+
+:global([data-theme="dark"]) .whenDark {
+  display: inline;
+}
+
+:global([data-theme="dark"]) .whenLight {
+  display: none;
+}
+
+/* Post button */
+.post {
+  margin-top: 16px;
+  width: 90%;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 16px;
+}
+
+.post:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+
+.post img {
+  display: none;
+}
+
+/* Narrow desktop and tablet: icons only */
+@media (max-width: 1199px) {
+  .nav {
+    align-items: center;
+    padding: 4px 0 20px;
+  }
+  .item {
+    padding: 12px;
+  }
+  .label {
+    display: none;
+  }
+  .post {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+  }
+  .post img {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  .postLabel {
+    display: none;
+  }
+}
+
+/* Phone: fixed bar at the bottom */
+@media (max-width: 699px) {
+  .nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    background: var(--nav-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+  }
+  .logo,
+  .soon {
+    display: none;
+  }
+  .post {
+    margin-top: 0;
+    width: 46px;
+    height: 46px;
+  }
+}

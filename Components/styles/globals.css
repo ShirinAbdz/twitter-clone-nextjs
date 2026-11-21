@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --bg-subtle: #f7f9f9;
+  --bg-input: #eff3f4;
+  --border: #eff3f4;
+  --border-strong: #cfd9de;
+  --text: #0f1419;
+  --text-muted: #536471;
+  --accent: #1d9bf0;
+  --accent-hover: #1a8cd8;
+  --danger: #f4212e;
+  --hover: rgba(15, 20, 25, 0.08);
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --overlay: rgba(91, 112, 131, 0.4);
+  --shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #000000;
+  --bg-subtle: #16181c;
+  --bg-input: #202327;
+  --border: #2f3336;
+  --border-strong: #536471;
+  --text: #e7e9ea;
+  --text-muted: #71767b;
+  --hover: rgba(231, 233, 234, 0.1);
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --overlay: rgba(91, 112, 131, 0.4);
+  --shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+textarea {
+  background: transparent;
+  color: inherit;
+}
+
+::placeholder {
+  color: var(--text-muted);
+}
+
+/* Black icons need to turn white on the dark theme. */
+:root[data-theme="dark"] .invert-dark {
+  filter: invert(1);
+}

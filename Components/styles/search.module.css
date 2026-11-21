@@ -1,0 +1,29 @@
+.searchBar {
+  position: relative;
+}
+
+.searchBar img {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid transparent;
+  border-radius: 22px;
+  outline: none;
+  padding: 12px 16px 12px 46px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.searchInput:focus {
+  background: var(--bg);
+  border-color: var(--accent);
+}

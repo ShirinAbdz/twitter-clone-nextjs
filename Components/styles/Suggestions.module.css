@@ -1,0 +1,77 @@
+.suggestSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px 16px 24px;
+}
+
+.suggestedAccounts {
+  background: var(--bg-subtle);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.suggestedAccounts h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.liTag {
+  list-style: none;
+  display: flex;
+}
+
+.suggestedAccount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.information {
+  flex: 1;
+  min-width: 0;
+}
+
+.name,
+.handle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.handle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.FollowButton {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 700;
+  background: var(--text);
+  color: var(--bg);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.FollowButton.following {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}

@@ -1,0 +1,77 @@
+.compose {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.right {
+  flex: 1;
+  min-width: 0;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 1.2rem;
+  padding: 8px 0;
+  font-weight: 300;
+  color: var(--text);
+}
+
+.bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.counter {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.over {
+  color: var(--danger);
+}
+
+.postButton {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.postButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .compose {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .input {
+    font-size: 1.1rem;
+  }
+}

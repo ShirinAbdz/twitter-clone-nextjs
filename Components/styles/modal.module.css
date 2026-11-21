@@ -1,0 +1,89 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8vh 12px 12px;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.modal {
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 16px;
+  width: min(100%, 560px);
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top h3 {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.cancel,
+.save {
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.save {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+}
+
+.save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.modal input,
+.modal textarea {
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  color: var(--text);
+  outline: none;
+  resize: none;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  border-color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding-top: 12px;
+  }
+}
